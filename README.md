@@ -6,10 +6,10 @@ app_name = 'board'
 
 urlpatterns = [
 
-    # 전체 블로그 조회 (대학 추가)
+    # 전체 게시글 조회 (대학 추가)
     path('university/', BoardUniversity.as_view()),
 
-    # 특정 대학의 블로그 조회
+    # 특정 대학의 게시글 조회
     path('university/<str:university>/', BoardUniversityDetail.as_view()),
 
     # 특정 댓글 조회
