@@ -5,6 +5,7 @@
 app_name = 'board'
 
 urlpatterns = [
+
     # 전체 블로그 조회 (대학 추가)
     path('university/', BoardUniversity.as_view()),
 
