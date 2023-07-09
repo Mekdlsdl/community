@@ -26,10 +26,10 @@ class BoardUniversityDetailSerializer(serializers.ModelSerializer):
     body = serializers.CharField(default="", read_only=True)
     university = serializers.CharField(source='user.university', read_only=True)
 
-
     class Meta:
         model = BoardUniversity
         fields = ['id', 'user', 'university', 'title', 'body']
+        
 
 class CommentSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format="%Y-%m-%d", read_only=True)

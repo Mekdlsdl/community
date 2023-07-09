@@ -24,7 +24,7 @@ class BoardUniversity(models.Model):
 
 class Comments(models.Model):
     post = models.ForeignKey(Board, related_name='comments', on_delete=models.CASCADE)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, null=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     comment = models.TextField(default="")
 
@@ -34,7 +34,7 @@ class Comments(models.Model):
 
 class CommentsDetail(models.Model):
     post = models.ForeignKey(Board, related_name='comments_detail', on_delete=models.CASCADE)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, null=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     comment = models.TextField(default="")
 
