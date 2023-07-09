@@ -6,7 +6,7 @@ from .permissions import IsOwnerOrReadOnly
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveDestroyAPIView, RetrieveUpdateAPIView, RetrieveAPIView
 
 
-# 전체 블로그 조회
+# 전체 게시글 조회
 class BoardList(ListCreateAPIView):
     queryset = Board.objects.all()
     serializer_class = BoardSerializer
@@ -18,7 +18,7 @@ class BoardList(ListCreateAPIView):
         serializer.save(user=user)
 
 
-# 전체 블로그 조회 (대학 추가)
+# 전체 게시글 조회 (대학 추가)
 class BoardUniversity(ListAPIView):
     queryset = Board.objects.all()
     serializer_class = BoardUniversitySerializer
@@ -26,7 +26,7 @@ class BoardUniversity(ListAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
-# 특정 대학의 블로그 조회
+# 특정 대학의 게시글 조회
 class BoardUniversityDetail(ListAPIView):
     queryset = Board.objects.all()
     serializer_class = BoardUniversityDetailSerializer
@@ -39,7 +39,7 @@ class BoardUniversityDetail(ListAPIView):
         return queryset
 
     
-# 특정 블로그 조회
+# 특정 게시글 조회
 class BoardDetail(RetrieveAPIView):
     queryset = Board.objects.all()
     serializer_class = BoardDetailSerializer
@@ -47,7 +47,7 @@ class BoardDetail(RetrieveAPIView):
     permission_classes = [IsOwnerOrReadOnly]
 
 
-# 특정 블로그 삭제
+# 특정 게시글 삭제
 class BoardDetailDestroy(RetrieveDestroyAPIView):
     queryset = Board.objects.all()
     serializer_class = BoardDetailSerializer
@@ -55,7 +55,7 @@ class BoardDetailDestroy(RetrieveDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
 
 
-# 특정 블로그 수정
+# 특정 게시글 수정
 class BoardDetailUpdate(RetrieveUpdateAPIView):
     queryset = Board.objects.all()
     serializer_class = BoardDetailSerializer
